@@ -16,7 +16,10 @@ public interface CardDistributer {
 	public default String[] distribute()
 	{
 		String[] cards = initCards();
-		cards = (String[]) ArrayUtil.shuffle(cards);
+		//洗牌10次
+		for (int i = 0; i < 10; i ++){
+			cards = (String[]) ArrayUtil.shuffle(cards);
+		}
 		return cards;
 	}
 	
