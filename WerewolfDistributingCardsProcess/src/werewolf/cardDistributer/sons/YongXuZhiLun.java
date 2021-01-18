@@ -7,24 +7,24 @@ public class YongXuZhiLun implements CardDistributer {
 	@Override
 	public String[] initCards() {
 		String[] cards = new String[12];
-		cards[0] = "Æ½Ãñ";
-		cards[1] = "Æ½Ãñ";
-		cards[2] = "Æ½Ãñ";
-		cards[3] = "Æ½Ãñ";
-		cards[4] = "Ê´ÉñÀÇåú";
-		cards[5] = "ÀÇÈË";
-		cards[6] = "ÀÇÈË";
-		cards[7] = "ÀÇÈË";
-		cards[8] = "Ô¤ÑÔ¼Ò";
-		cards[9] = "Å®Î×";
-		cards[10] = "Ê±ĞòÍõ×Ó";
-		cards[11] = "ÊØÎÀ";
+		cards[0] = "å¹³æ°‘";
+		cards[1] = "å¹³æ°‘";
+		cards[2] = "å¹³æ°‘";
+		cards[3] = "å¹³æ°‘";
+		cards[4] = "èš€ç¥ç‹¼å¦ƒ";
+		cards[5] = "ç‹¼äºº";
+		cards[6] = "ç‹¼äºº";
+		cards[7] = "ç‹¼äºº";
+		cards[8] = "é¢„è¨€å®¶";
+		cards[9] = "å¥³å·«";
+		cards[10] = "æ—¶åºç‹å­";
+		cards[11] = "å®ˆå«";
 		return cards;
 	}
 
 	@Override
 	public String getTheme() {
-		return "ÓÀĞøÖ®ÂÖ";
+		return "æ°¸ç»­ä¹‹è½®";
 	}
 
 }

@@ -8,28 +8,30 @@ import java.util.List;
 import werewolf.cardDistributer.father.CardDistributer;
 
 /**
- * ×ÓÀàÉ¨ÃèÆ÷
- * ²éÕÒ·¢ÅÆÆ÷¸¸ÀàµÄËùÓĞ×ÓÀà
+ * å­ç±»æ‰«æå™¨
+ * è·å–å‘ç‰Œå™¨çˆ¶ç±»çš„æ‰€æœ‰å­ç±»
  * @author BlazingPhoenix
  *
  */
 public class SubClassesScanner {
 
-	//É¨ÃèµÄÂ·¾¶
+	//å‘ç‰Œå™¨çˆ¶ç±»çš„å­ç±»æ‰€åœ¨çš„è·¯å¾„
 	private static final String CLASSES_PATH =  System.getProperty("user.dir") + "\\src\\werewolf\\cardDistributer\\sons";
-	private static List<String> fileList = new ArrayList<String>();
-	private static List<String> sonsRoster = new ArrayList<String>();
+	
 	
 	/**
-	 * »ñÈ¡·¢ÅÆÆ÷×ÓÀàÁĞ±í
-	 * @return
+	 * è·å–å­ç±»åç§°åˆ—è¡¨
+	 * @return å‘ç‰Œå™¨å­ç±»çš„åç§°åˆ—è¡¨
 	 */
 	public static List<String> getDistributersNameList()
 	{
+		//æ–‡ä»¶åˆ—è¡¨
+		List<String> fileList = new ArrayList<String>();
+		//å­ç±»åå•
+		List<String> sonsRoster = new ArrayList<String>();
 		File baseFile = new File(CLASSES_PATH);
-		//¶ÁÈ¡ÎÄ¼ş
-		if(baseFile.exists())
-		{
+		//è¯»å–è·¯å¾„ä¸‹æ‰€æœ‰æ–‡ä»¶
+		if(baseFile.exists()){
 			getSubFileNameList(baseFile,fileList);
 		}
 		for(String name:fileList){
@@ -42,9 +44,9 @@ public class SubClassesScanner {
 	}
 	
 	/**
-	 *  µİ¹é²éÕÒÖ¸¶¨Ä¿Â¼ÏÂµÄÀàÎÄ¼şµÄÈ«Â·¾¶
-	 * @param baseFile ²éÕÒÎÄ¼şµÄÈë¿Ú
-	 * @param fileList ±£´æÒÑ¾­²éÕÒµ½µÄÎÄ¼ş¼¯ºÏ
+	 *  é€’å½’æŸ¥æ‰¾æŒ‡å®šç›®å½•ä¸‹çš„ç±»æ–‡ä»¶çš„å…¨è·¯å¾„ï¼ŒåŠ åˆ°æ–‡ä»¶åˆ—è¡¨ä¸­
+	 * @param baseFile æŸ¥æ‰¾æ–‡ä»¶çš„å…¥å£è·¯å¾„
+	 * @param fileList æ–‡ä»¶åˆ—è¡¨ï¼šä¿å­˜å·²ç»æŸ¥æ‰¾åˆ°çš„æ–‡ä»¶é›†åˆ
 	 */
 	private static void getSubFileNameList(File baseFile, List<String> fileList){
 		if(baseFile.isDirectory())
@@ -65,10 +67,10 @@ public class SubClassesScanner {
 	
 
 	/**
-	 * ÅĞ¶ÏÒ»¸öÀàÊÇ·ñ¼Ì³ĞÄ³¸ö½Ó¿Ú
-	 * @param className 
-	 * @param parentClazz 
-	 * @return
+	 * åˆ¤æ–­ä¸€ä¸ªç±»æ˜¯å¦æ˜¯æŸä¸ªæ¥å£çš„å®ç°ç±»
+	 * @param className ç±»
+	 * @param parentClazz æ¥å£ 
+	 * @return è‹¥ç±»æ˜¯æ¥å£çš„å®ç°ç±»ï¼Œè¿”å›true
 	 */
 	public static boolean isChildClass(String className,Class parentClazz){
 		if(className == null) 

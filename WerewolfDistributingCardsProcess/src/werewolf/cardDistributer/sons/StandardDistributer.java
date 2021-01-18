@@ -3,7 +3,7 @@ package werewolf.cardDistributer.sons;
 import werewolf.cardDistributer.father.CardDistributer;
 
 /**
- * 12ÈË±ê×¼³¡·¢ÅÆÆ÷
+ * 12äººæ ‡å‡†åœºå‘ç‰Œå™¨
  * @author BlazingPhoenix
  *
  */
@@ -12,24 +12,24 @@ public class StandardDistributer implements CardDistributer {
 	@Override
 	public String[] initCards() {
 		String[] cards = new String[12];
-		cards[0] = "Æ½Ãñ";
-		cards[1] = "Æ½Ãñ";
-		cards[2] = "Æ½Ãñ";
-		cards[3] = "Æ½Ãñ";
-		cards[4] = "ÀÇÈË";
-		cards[5] = "ÀÇÈË";
-		cards[6] = "ÀÇÈË";
-		cards[7] = "ÀÇÈË";
-		cards[8] = "Ô¤ÑÔ¼Ò";
-		cards[9] = "Å®Î×";
-		cards[10] = "ÁÔÈË";
-		cards[11] = "°×³Õ";
+		cards[0] = "å¹³æ°‘";
+		cards[1] = "å¹³æ°‘";
+		cards[2] = "å¹³æ°‘";
+		cards[3] = "å¹³æ°‘";
+		cards[4] = "ç‹¼äºº";
+		cards[5] = "ç‹¼äºº";
+		cards[6] = "ç‹¼äºº";
+		cards[7] = "ç‹¼äºº";
+		cards[8] = "é¢„è¨€å®¶";
+		cards[9] = "å¥³å·«";
+		cards[10] = "çŒäºº";
+		cards[11] = "ç™½ç—´";
 		return cards;
 	}
 
 	@Override
 	public String getTheme() {
-		return "12ÈË±ê×¼³¡";
+		return "12äººæ ‡å‡†åœº";
 	}
 
 }

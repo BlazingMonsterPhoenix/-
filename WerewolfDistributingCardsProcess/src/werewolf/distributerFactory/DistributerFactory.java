@@ -8,8 +8,8 @@ import werewolf.cardDistributer.father.CardDistributer;
 import werewolf.util.classUtil.SubClassesScanner;
 
 /**
- * ·¢ÅÆÆ÷¹¤³§
- * @author zhouzhengyu
+ * å‘ç‰Œå™¨å·¥å‚
+ * @author BlazingPhoenix
  *
  */
 public class DistributerFactory {
@@ -17,9 +17,9 @@ public class DistributerFactory {
 	private static Map<String,CardDistributer> distributerMap = new HashMap<String,CardDistributer>();
 	
 	/**
-	 * ·Ö·¢¿¨ÅÆ
-	 * @param theme °å×ÓÃû³Æ
-	 * @return ´òÂÒºóµÄÅÆ¶Ñ£¨Íæ¼ÒÒÀ´Î´ÓÅÆ¶Ñ×îÉÏ·½È¡ÅÆ£©
+	 * æ ¹æ®æ¿å­åç§°è·å–å¯¹åº”çš„å‘ç‰Œå™¨è¿›è¡Œå‘ç‰Œ
+	 * @param theme æ¿å­åç§°
+	 * @return æ‰“ä¹±åçš„èº«ä»½ç‰Œç‰Œå †
 	 */
 	public static String[] distribute(String theme)
 	{
@@ -27,7 +27,9 @@ public class DistributerFactory {
 		return distributerMap.get(theme).distribute();
 	}
 	
-	
+	/**
+	 * å°†æ‰€æœ‰çš„å‘ç‰Œå™¨æ³¨å†Œè¿›å‘ç‰Œå™¨å·¥å‚
+	 */
 	private static void registerAllDistributers()
 	{
 		List<String> distributers = SubClassesScanner.getDistributersNameList();
@@ -44,15 +46,15 @@ public class DistributerFactory {
 	}
 	
 	/**
-	 * ×¢²á·¢ÅÆÆ÷
-	 * @param theme ÓÎÏ·Ö÷Ìâ£¨°å×Ó£©
-	 * @param distributer ·¢ÅÆÆ÷
+	 * æ³¨å†Œå‘ç‰Œå™¨
+	 * @param theme æ¿å­åç§°
+	 * @param distributer æ¿å­åç§°å¯¹åº”çš„å‘ç‰Œå™¨
 	 */
 	public static void register(String theme, CardDistributer distributer)
 	{
 		if (theme == null || theme.length() == 0 || distributer == null)
 		{
-			throw new IllegalArgumentException("°å×ÓÃû³Æ»ò·¢ÅÆÆ÷Î´³õÊ¼»¯£¬·¢ÅÆÆ÷×¢²áÊ§°Ü");
+			throw new IllegalArgumentException("æ¿å­åç§°æˆ–å‘ç‰Œå™¨æœªåˆå§‹åŒ–ï¼Œæ‰€ä»¥å‘ç‰Œå™¨æ³¨å†Œå¤±è´¥");
 		}
 		distributerMap.putIfAbsent(theme, distributer);
 	}
