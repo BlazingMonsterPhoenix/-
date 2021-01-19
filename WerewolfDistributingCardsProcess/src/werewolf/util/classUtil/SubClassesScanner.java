@@ -72,10 +72,10 @@ public class SubClassesScanner {
 	 * @param parentClazz 接口 
 	 * @return 若类是接口的实现类，返回true
 	 */
-	public static boolean isChildClass(String className,Class parentClazz){
+	public static boolean isChildClass(String className,Class<?> parentClazz){
 		if(className == null) 
 			return false;
-		Class clazz = null;
+		Class<?> clazz = null;
 		try {
 			clazz = Class.forName(className);
 			if(Modifier.isInterface(clazz.getModifiers())){

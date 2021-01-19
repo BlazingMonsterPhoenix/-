@@ -32,4 +32,18 @@ public class StandardDistributer implements CardDistributer {
 		return "12人标准场";
 	}
 
+	@Override
+	public int getNumOfCards() {
+		// TODO Auto-generated method stub
+		return 12;
+	}
+
+	@Override
+	public String getDescription() {
+		StringBuffer description = new StringBuffer("平民数量：平民*4\n");
+		description.append("神民组合：预言家、女巫、猎人、白痴\n");
+		description.append("狼人阵营：狼人*4");
+		return description.toString();
+	}
+
 }

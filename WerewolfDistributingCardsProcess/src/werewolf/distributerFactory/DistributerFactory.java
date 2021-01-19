@@ -28,6 +28,28 @@ public class DistributerFactory {
 	}
 	
 	/**
+	 * 获取板子的身份牌数量
+	 * @param theme 板子名称
+	 * @return 身份牌数量
+	 */
+	public static int getNumOfCards(String theme)
+	{
+		registerAllDistributers();
+		return distributerMap.get(theme).getNumOfCards();
+	}
+	
+	/**
+	 * 获取板子的身份牌（配置）描述
+	 * @param theme 板子名称
+	 * @return 配置描述（即，有哪些身份牌）
+	 */
+	public static String getDescription(String theme)
+	{
+		registerAllDistributers();
+		return distributerMap.get(theme).getDescription();
+	}
+	
+	/**
 	 * 将所有的发牌器注册进发牌器工厂
 	 */
 	private static void registerAllDistributers()

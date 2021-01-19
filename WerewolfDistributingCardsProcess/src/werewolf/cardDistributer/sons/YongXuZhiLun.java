@@ -32,4 +32,18 @@ public class YongXuZhiLun implements CardDistributer {
 		return "永续之轮";
 	}
 
+	@Override
+	public int getNumOfCards() {
+		// TODO Auto-generated method stub
+		return 12;
+	}
+
+	@Override
+	public String getDescription() {
+		StringBuffer description = new StringBuffer("平民数量：平民*4\n");
+		description.append("神民组合：预言家、女巫、定序王子、守卫\n");
+		description.append("狼人阵营：狼人*3、蚀时狼妃");
+		return description.toString();
+	}
+
 }

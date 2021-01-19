@@ -3,6 +3,27 @@ package werewolf.util.arrayUtil;
 public class ArrayUtil {
 
 	/**
+	 * 部分随机打乱数组（洗牌）
+	 * @description 将数组的一部分打乱<br>
+	 * 				先从数组中随机抽取一个元素作为新数组第一个元素，再从剩下的中抽取一个作为第二个元素，以此类推<br>
+	 * 				以抽排类比：n个人从n张牌的牌堆中抽牌。依次随机抽取，每个人拿到任一一张牌的概率相同
+	 * @param array 等待被打乱的数组
+	 * @param start 随机打乱部分的起始元素下标
+	 * @param end 随机打乱部分的末尾元素下标+1
+	 * @return 打乱后的数组
+	 */
+	public static Object[] shuffle(Object[] array, int start, int end)
+	{
+		Object[] newArray = array.clone();
+		for (int i = start; i < end; i ++)
+		{
+			int x = (int)(Math.random() * end - i) + i;
+			exchange(newArray, i, x);
+		}
+		return newArray;
+	}
+	
+	/**
 	 * 随机打乱数组（洗牌）
 	 * @description 将数组打乱<br>
 	 * 				先从数组中随机抽取一个元素作为新数组第一个元素，再从剩下的中抽取一个作为第二个元素，以此类推<br>

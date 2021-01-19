@@ -32,4 +32,17 @@ public class MengYanSheMengRen implements CardDistributer {
 		return "噩梦之影";
 	}
 
+	@Override
+	public int getNumOfCards() {
+		return 12;
+	}
+
+	@Override
+	public String getDescription() {
+		StringBuffer description = new StringBuffer("平民数量：平民*4\n");
+		description.append("神民组合：预言家、女巫、猎人、摄梦人\n");
+		description.append("狼人阵营：狼人*3、噩梦之影");
+		return description.toString();
+	}
+
 }

@@ -32,4 +32,17 @@ public class QiJiShangRen implements CardDistributer {
 		return "奇迹商人";
 	}
 
+	@Override
+	public int getNumOfCards() {
+		return 12;
+	}
+
+	@Override
+	public String getDescription() {
+		StringBuffer description = new StringBuffer("平民数量：平民*4\n");
+		description.append("神民组合：预言家、女巫、奇迹商人、守卫\n");
+		description.append("狼人阵营：狼人*3、黑狼王");
+		return description.toString();
+	}
+
 }

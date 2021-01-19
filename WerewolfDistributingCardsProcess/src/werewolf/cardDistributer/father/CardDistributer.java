@@ -16,6 +16,12 @@ public interface CardDistributer {
 	public default String[] distribute()
 	{
 		String[] cards = initCards();
+		cards = shuffleCards(cards);
+		return cards;
+	}
+	
+	default String[] shuffleCards(String[] cards)
+	{
 		//洗牌10次
 		for (int i = 0; i < 10; i ++){
 			cards = (String[]) ArrayUtil.shuffle(cards);
@@ -40,4 +46,15 @@ public interface CardDistributer {
 	 */
 	public String getTheme();
 	
+	/**
+	 * 获取身份牌数量
+	 * @return 身份牌数量
+	 */
+	public int getNumOfCards();
+	
+	/**
+	 * 获取板子身份描述
+	 * @return 身份牌描述
+	 */
+	public String getDescription();
 }
