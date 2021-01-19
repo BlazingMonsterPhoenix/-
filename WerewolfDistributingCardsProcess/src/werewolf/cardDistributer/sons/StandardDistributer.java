@@ -28,13 +28,7 @@ public class StandardDistributer implements CardDistributer {
 	}
 
 	@Override
-	public String getTheme() {
-		return "12人标准场";
-	}
-
-	@Override
 	public int getNumOfCards() {
-		// TODO Auto-generated method stub
 		return 12;
 	}
 
@@ -44,6 +38,16 @@ public class StandardDistributer implements CardDistributer {
 		description.append("神民组合：预言家、女巫、猎人、白痴\n");
 		description.append("狼人阵营：狼人*4");
 		return description.toString();
+	}
+
+	@Override
+	public int getNumOfPlayers() {
+		return 12;
+	}
+
+	@Override
+	public String getThemeName() {
+		return "标准场";
 	}
 
 }

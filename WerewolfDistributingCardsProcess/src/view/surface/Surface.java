@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import view.customize.ChooseBox;
 import view.customize.IdentityList;
 import view.message.Message;
 
@@ -18,6 +19,7 @@ public class Surface extends JFrame {
 	{
 		init();
 		initBackground(Message.getBackgroundPath());
+		initChooseBox();
 		initIdentityList();
 		this.setVisible(true);
 	}
@@ -73,5 +75,15 @@ public class Surface extends JFrame {
 		IdentityList list = new IdentityList();
 		list.setBounds(0, 0, 300, 400);
 		this.add(list);
+	}
+	
+	/**
+	 * 初始化板子选择器
+	 */
+	private void initChooseBox()
+	{
+		ChooseBox box = new ChooseBox();
+		box.setBounds(0, 0, 300, 400);
+		this.add(box);
 	}
 }

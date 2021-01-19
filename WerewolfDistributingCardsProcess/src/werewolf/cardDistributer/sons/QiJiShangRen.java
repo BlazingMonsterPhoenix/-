@@ -28,11 +28,6 @@ public class QiJiShangRen implements CardDistributer {
 	}
 
 	@Override
-	public String getTheme() {
-		return "奇迹商人";
-	}
-
-	@Override
 	public int getNumOfCards() {
 		return 12;
 	}
@@ -43,6 +38,16 @@ public class QiJiShangRen implements CardDistributer {
 		description.append("神民组合：预言家、女巫、奇迹商人、守卫\n");
 		description.append("狼人阵营：狼人*3、黑狼王");
 		return description.toString();
+	}
+
+	@Override
+	public int getNumOfPlayers() {
+		return 12;
+	}
+
+	@Override
+	public String getThemeName() {
+		return "奇迹商人";
 	}
 
 }

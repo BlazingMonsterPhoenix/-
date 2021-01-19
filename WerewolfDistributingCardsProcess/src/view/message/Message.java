@@ -2,8 +2,8 @@ package view.message;
 
 public class Message {
 
-	private static final int JFRAME_WIDTH = 330;
-	private static final int JFRAME_HEIGHT = 470;
+	private static final int JFRAME_WIDTH = 340;
+	private static final int JFRAME_HEIGHT = 480;
 	private static final String BACK_PATH = "pictures/background1.png";
 	
 	/**

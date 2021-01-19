@@ -24,11 +24,6 @@ public class QiuBiTe implements CardDistributer {
 		cards[13] = "盗贼";
 		return cards;
 	}
-
-	@Override
-	public String getTheme() {
-		return "丘比特";
-	}
 	
 	/**
 	 * 覆写洗牌方法
@@ -64,6 +59,16 @@ public class QiuBiTe implements CardDistributer {
 		description.append("狼人阵营：狼人*2、黑狼王\n");
 		description.append("第三方和可变阵营：丘比特、盗贼");
 		return description.toString();
+	}
+
+	@Override
+	public int getNumOfPlayers() {
+		return 12;
+	}
+
+	@Override
+	public String getThemeName() {
+		return "丘比特";
 	}
 
 }

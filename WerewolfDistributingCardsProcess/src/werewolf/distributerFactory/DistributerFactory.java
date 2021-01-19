@@ -1,5 +1,6 @@
 package werewolf.distributerFactory;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,6 +16,47 @@ import werewolf.util.classUtil.SubClassesScanner;
 public class DistributerFactory {
 
 	private static Map<String,CardDistributer> distributerMap = new HashMap<String,CardDistributer>();
+	
+	/**
+	 * 获取板子人数列表
+	 * @description 获取所有的板子可能出现的人数有哪些，以及n人场对应的板子的数量
+	 * @return 
+	 */
+	public static Map<String,Integer> getNumOfPlayersList()
+	{
+		Map<String,Integer> map = new HashMap<String,Integer>();
+		registerAllDistributers();
+		for (CardDistributer distributer : distributerMap.values())
+		{
+			String num = distributer.getNumOfPlayers() + "人";
+			if (map.containsKey(num)) {
+				map.put(num, map.get(num) + 1);
+			}
+			else {
+				map.put(num, 0);
+			}
+		}
+		return map;
+	}
+	
+	/**
+	 * 获取所有n人场的板子主题名称 
+	 * @param numOfPlayer n
+	 * @return 板子主题名称列表
+	 */
+	public static List<String> getThemeNamesOfNPlayers(String numOfPlayer)
+	{
+		List<String> themeList = new ArrayList<String>();
+		registerAllDistributers();
+		for (CardDistributer distributer : distributerMap.values())
+		{
+			if (numOfPlayer.equals(distributer.getNumOfPlayers() + "人"))
+			{
+				themeList.add(distributer.getThemeName());
+			}
+		}
+		return themeList;
+	}
 	
 	/**
 	 * 根据板子名称获取对应的发牌器进行发牌

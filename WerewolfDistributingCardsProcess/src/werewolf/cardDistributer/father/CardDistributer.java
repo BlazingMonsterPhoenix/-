@@ -44,7 +44,10 @@ public interface CardDistributer {
 	 * 				发牌时根据板子名称获取对应的发牌器进行发牌
 	 * @return 板子名称
 	 */
-	public String getTheme();
+	public default String getTheme()
+	{
+		return getNumOfPlayers() + "人" + getThemeName();
+	}
 	
 	/**
 	 * 获取身份牌数量
@@ -57,4 +60,16 @@ public interface CardDistributer {
 	 * @return 身份牌描述
 	 */
 	public String getDescription();
+	
+	/**
+	 * 获取玩家数量
+	 * @return 玩家数量
+	 */
+	public int getNumOfPlayers();
+	
+	/**
+	 * 获取主题名字
+	 * @return 主题名字
+	 */
+	public String getThemeName();
 }
