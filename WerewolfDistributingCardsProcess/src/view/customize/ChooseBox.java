@@ -23,6 +23,7 @@ public class ChooseBox extends JPanel {
 		initTitle();
 		initNumChooseBox();
 		initThemeChooseBox();
+		//initDistributeButton();
 		//System.out.println(getTheme());
 		this.setBounds(0, 0, Message.getJFrameWidth(), Message.getJFrameHeight());
         this.setOpaque(false);
@@ -62,7 +63,7 @@ public class ChooseBox extends JPanel {
 	}
 	
 	/**
-	 * 
+	 * 初始化板子主题选择框
 	 */
 	private void initThemeChooseBox()
 	{
@@ -83,6 +84,7 @@ public class ChooseBox extends JPanel {
 		this.add(tips);
 		this.add(themeChooseBox);
 	}
+	
 	
 	public String getTheme()
 	{

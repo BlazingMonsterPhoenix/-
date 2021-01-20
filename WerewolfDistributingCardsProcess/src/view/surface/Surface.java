@@ -1,7 +1,10 @@
 package view.surface;
 
+import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -9,6 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import view.customize.ChooseBox;
+import view.customize.DistributingButton;
 import view.customize.IdentityList;
 import view.message.Message;
 
@@ -21,6 +25,7 @@ public class Surface extends JFrame {
 		initBackground(Message.getBackgroundPath());
 		initChooseBox();
 		initIdentityList();
+		initButton();
 		this.setVisible(true);
 	}
 	
@@ -73,7 +78,7 @@ public class Surface extends JFrame {
 	private void initIdentityList()
 	{
 		IdentityList list = new IdentityList();
-		list.setBounds(0, 0, 300, 400);
+		list.setBounds(0, 0, Message.getJFrameWidth(), Message.getJFrameHeight());
 		this.add(list);
 	}
 	
@@ -83,7 +88,43 @@ public class Surface extends JFrame {
 	private void initChooseBox()
 	{
 		ChooseBox box = new ChooseBox();
-		box.setBounds(0, 0, 300, 400);
+		box.setBounds(0, 0, Message.getJFrameWidth(), Message.getJFrameHeight());
 		this.add(box);
 	}
+	
+	/**
+	 * 初始化发牌按钮
+	 */
+	private void initButton()
+	{
+		DistributingButton button = new DistributingButton();
+		button.setBounds(0, 0, Message.getJFrameWidth(), Message.getJFrameHeight());
+		button.addClickListener(new MouseListener()
+		{
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				System.out.println("点击");
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				System.out.println("1");
+			}
+
+			@Override
+			public void mouseExited(MouseEvent arg0) {
+			}
+
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+			}
+		});
+		this.add(button);
+	}
+	
+	
 }

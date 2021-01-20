@@ -142,4 +142,5 @@ public class IdentityList extends JPanel {
 			players[i].setVisible(true);
 		}
 	}
+	
 }
